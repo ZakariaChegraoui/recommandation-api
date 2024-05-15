@@ -71,3 +71,7 @@ async def recommend_items(user_id: int, n_items: int):
         return {"user_id": user_id, "recommended_items": recommended_items}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+    
+@app.get("/")
+def read_root():
+    return {"status": "ok"}
